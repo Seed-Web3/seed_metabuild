@@ -25,6 +25,7 @@ import LandingPage from "./src/pages/Landingpage/IndexLandingPage";
 import IndexJobListing from "./src/pages/JobList/IndexJobListing";
 import ListJobDisplay from "./src/pages/JobList/ListJobDisplay";
 import IndexRentTalent from "./src/pages/RentTalent/IndexRentTalent";
+import RentTalentForm  from "./src/pages/RentTalent/RentTalentForm";
 import IndexIssueNft from "./src/pages/IssueNFT/IndexIssueNft";
 import NftLink from "./src/pages/IssueNFT/NftLink";
 import BatchMint from "./src/pages/IssueNFT/BatchMint";
@@ -35,6 +36,8 @@ import NavbarLayout from "./src/components/Layout/NavbarLayout";
 import FullScreenLayout from "./src/components/Layout/FullscreenLayout";
 import ProtectedLayout from "./src/components/Layout/ProtectedLayout";
 import JobMgmt from "./src/pages/JobManagement/JobMgmt";
+import Form from './src/pages/profileForm/Form'
+
 
 export default function App({ isSignedIn, wallet }) {
   const [config, setConfig] = useState({
@@ -80,6 +83,7 @@ export default function App({ isSignedIn, wallet }) {
                 {/* Job Listing */}
                 <Route exact path="/jobs" element={<ListJobDisplay />} />
                 <Route exact path="/job/create" element={<IndexJobListing />} />
+                <Route exact path='/IndexRentTalent' element={<IndexRentTalent/>}></Route>
               </Route>
 
               <Route path="/user" element={<ProtectedLayout />}>
@@ -96,9 +100,11 @@ export default function App({ isSignedIn, wallet }) {
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/emailogin" element={<EmailLogin />} />
                 <Route
-                  path="profile/preview/:account"
+                  path="/profile/preview/:account"
+                  //   path={`profile/preview/${account}`}
                   element={<ProfileDisplay />}
                 />
+                <Route path="/Form" element={<Form/>}></Route>
               </Route>
               <Route exact path="/home" element={<Home />} />
 
@@ -126,6 +132,7 @@ export default function App({ isSignedIn, wallet }) {
                 element={<BatchMint wallet={wallet} />}
               />
               <Route path="*" element={<LandingPage />} />
+
             </Routes>
           </div>
         </div>

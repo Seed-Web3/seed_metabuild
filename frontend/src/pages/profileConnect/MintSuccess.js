@@ -19,7 +19,7 @@ function MintSuccess() {
               Minting is Successful!
             </div>
             <div className="mt-[10rem]">
-              <Link to="/profiledisplay">
+              <Link to="/jobs">
                 <button
                   type="button"
                   className="bg-black px-4 py-2 rounded-full font-bold text-[#DAFF3E]"

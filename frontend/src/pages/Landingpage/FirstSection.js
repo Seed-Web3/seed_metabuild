@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { TypeAnimation } from "react-type-animation";
 // import bg from "../../assets/img/globe.png";
 // import logo from "../../assets/img/logo.png";
 import cursor from "../../../assets/img/cursor.png";
 
 function FirstSection() {
+
   return (
     <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
       <section className="text-black h-screen font-robotoMono flex flex-col w-full items-center p-8">
@@ -46,7 +47,7 @@ function FirstSection() {
           </div>
           </div>
         </section>
-      
+
     </div>
   );
 }

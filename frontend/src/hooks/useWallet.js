@@ -46,7 +46,7 @@ export const WalletProvider = ({ children }) => {
     if (isSignedIn) {
       const wallet = await walletSelector.wallet();
       const accountId = walletSelector.store.getState().accounts[0].accountId;
-      
+
 
       const keystore = new keyStores.BrowserLocalStorageKeyStore()
       const keyPair = await keystore.getKey(network, accountId)
@@ -76,7 +76,7 @@ export const WalletProvider = ({ children }) => {
         } catch(e) {
           console.log(e)
         }
-        
+
         setWallet(wallet)
         setAccountId(accountId)
       }
@@ -108,7 +108,7 @@ export const WalletProvider = ({ children }) => {
     setWallet(null)
     setAccountId(null)
     setContractId(null)
-    
+
     window.location.replace(window.location.origin + window.location.pathname);
   }
 

@@ -4,16 +4,21 @@ import Testimonial from "./Testimonial";
 import JobFormbg from "../../../assets/img/jobformbg2.png";
 import useIpfsFactory from "../../hooks/useIpfsFactory";
 import { useWallet } from "../../hooks/useWallet";
+import {useNavigate} from "react-router-dom";
 
 export const JobCreationFormContext = createContext()
 
 function IndexJobListing() {
+  const navigate = useNavigate()
+  const goToSuccess = () => {
+    navigate('/mintSuccess')
+  }
 
   const { ipfs } = useIpfsFactory()
   const { callMethod } = useWallet()
 
   const [logoImg, setLogoImg] = useState()
-  
+
   const [form, setForm] = useState({
     position: '',
     description: '',
@@ -45,6 +50,7 @@ function IndexJobListing() {
   }
 
   const onHandleSubmit = async (evt) => {
+    goToSuccess()
     evt.preventDefault();
     try {
 
@@ -67,7 +73,7 @@ function IndexJobListing() {
           console.log(res)
         }
       }
-      
+
     } catch(e) {
       console.log(e)
     }
@@ -76,7 +82,7 @@ function IndexJobListing() {
   const onFileChange = (e) => {
     setLogoImg(e.target.files[0])
   }
-  
+
   return (
     <JobCreationFormContext.Provider value={{form, setForm, handleChange, onFileChange}}>
       <div className="relative min-h-screen overflow-x-hidden bg-[#DAFF3E]">

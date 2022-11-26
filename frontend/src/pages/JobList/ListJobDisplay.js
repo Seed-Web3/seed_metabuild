@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 
+
 import ArticleCard from "./Article/index";
 import Graphic1 from "../../../assets/img/bowl2.png";
 import Graphic2 from "../../../assets/img/graphic.png";
@@ -16,6 +17,7 @@ function classNames(...classes) {
 }
 
 function ToggleFilter(props) {
+
   return (
     <>
       <label htmlFor={props.label} className="relative h-6 w-14 cursor-pointer">
@@ -47,8 +49,11 @@ function SearchTag(prop) {
   );
 }
 
-function JobsList() {
+function JobsList(props) {
 
+  useEffect(() => {
+    console.log(props)
+  },[])
   const { viewMethod } = useWallet()
   const navigate = useNavigate()
 
@@ -57,7 +62,7 @@ function JobsList() {
   }
 
   const goToRentalPage = () => {
-    navigate('/user/rental')
+    navigate('/IndexRentTalent')
   }
 
   const [tags] = useState([
@@ -72,7 +77,7 @@ function JobsList() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    
+
     const getAllJobs = async () => {
       const respond = await viewMethod('seed.bonebon.testnet', 'get_all_jobs')
       if(respond) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import near from "../../../assets/img/near.png";
 import bg from "../../../assets/img/globe.png";
@@ -10,11 +10,12 @@ function Login() {
   const { accountId, signIn } = useWallet();
   const navigate = useNavigate();
 
-  if (accountId) {
-    navigate("/jobs");
-  }
 
+    if (accountId) {
+      navigate("profile/preview/:account");
+    }
   const onHandleNearButton = () => {
+    // navigate("profile/preview/:account")
     signIn("seed.bonebon.testnet");
   };
 
@@ -29,7 +30,8 @@ function Login() {
         }}
       >
         <div className="flex flex-col justify-center items-center-center text-[#DAFF3E] font-robotoMono -mt-[10%]">
-          <p className="text-[5vh] font-bold">WELCOME TO WEB3_CAREER HUB</p>
+          <p className="text-[5vh] font-bold">WELCOME TO SEED</p>
+
           <div className="w-[15%] pt-[rem] m-auto">
             <div className="flex flex-col justify-center items-center mt-10 mx-[6rem]">
               <div>
@@ -52,25 +54,25 @@ function Login() {
                     </div>
                   </button>
                 </Link>
-                <Link to="/profileForm">
-                  <button
-                    type="button"
-                    className="bg-[#DAFF3E]  px-6 py-3 w-[230px] mb-4 rounded-2xl"
-                  >
-                    <div className="flex justify-between">
-                      <div className="uppercase font-bold text-[3vh] text-black">
-                        <p>google</p>
-                      </div>
-                      <div>
-                        <img
-                          src={google}
-                          alt=""
-                          className="w-[28px] h-[28px] mt-1"
-                        />
-                      </div>
-                    </div>
-                  </button>
-                </Link>
+                {/*<Link to="/profileForm">*/}
+                {/*  <button*/}
+                {/*    type="button"*/}
+                {/*    className="bg-[#DAFF3E]  px-6 py-3 w-[230px] mb-4 rounded-2xl"*/}
+                {/*  >*/}
+                {/*    <div className="flex justify-between">*/}
+                {/*      <div className="uppercase font-bold text-[3vh] text-black">*/}
+                {/*        <p>google</p>*/}
+                {/*      </div>*/}
+                {/*      <div>*/}
+                {/*        <img*/}
+                {/*          src={google}*/}
+                {/*          alt=""*/}
+                {/*          className="w-[28px] h-[28px] mt-1"*/}
+                {/*        />*/}
+                {/*      </div>*/}
+                {/*    </div>*/}
+                {/*  </button>*/}
+                {/*</Link>*/}
                 <button
                   type="button"
                   className="bg-[#DAFF3E]  px-6 py-3 w-[230px] mb-4 rounded-2xl"

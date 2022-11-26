@@ -4,8 +4,13 @@ import ListJobForm from "./RentTalentForm";
 import logo from "../../../assets/img/logoSmall.png";
 import rentbg from "../../../assets/img/rentbg2.png";
 import Testimonial from "./Testimonial";
+import {useNavigate} from "react-router-dom";
 
 function IndexRentTalent() {
+  const navigate = useNavigate()
+  const goToSuccess = () => {
+    navigate('/mintSuccess')
+  }
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[black] text-[#DAFF3E]">
       <div>
@@ -31,6 +36,7 @@ function IndexRentTalent() {
               <div className="flex  justify-center">
                 <div>
                   <button
+                      onClick={goToSuccess}
                     type="button"
                     className="text-black bg-[#DAFF3E] px-5 py-1 rounded-full"
                   >

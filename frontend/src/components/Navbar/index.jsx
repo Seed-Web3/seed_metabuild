@@ -5,9 +5,9 @@ import { useWallet } from "../../hooks/useWallet";
 import { AuthEnabled } from "./AuthEnabled";
 
 const navigation = [
-  { name: "My Profile", href: "user/profile/form", current: false },
-  { name: "Career Hub", href: "/jobs", current: false },
-  { name: "Rent Talent", href: "/user/rental", current: false },
+  { name: "LEARN", href: "/login", current: false },
+  { name: "BUILD", href: '/IndexRentTalent', current: false },
+  { name: "HIRE", href: "/user/rental", current: false },
   // { name: "Academy", href: "#", current: false },
 ];
 
@@ -65,7 +65,7 @@ export default function Navbar(props) {
           {/* {props.isNavEnabled && <NavsEnabled />} */}
           <NavsEnabled />
           <AuthEnabled />
-          
+
         </div>
       </div>
     </header>

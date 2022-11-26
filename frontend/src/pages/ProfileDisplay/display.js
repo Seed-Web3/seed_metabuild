@@ -17,7 +17,7 @@ const ProfileDisplay = () => {
 
   const { account } = useParams()
   const { viewMethod } = useWallet()
-  
+
   const [profile, setProfile] = useState({
     bio: '',
     country: '',
@@ -42,6 +42,9 @@ const ProfileDisplay = () => {
       setProfile(res.profile)
     }
   }
+  useEffect(() => {
+    console.log(111)
+  },[])
 
   useEffect(()=> {
     if(account && !profile.handler) {
