@@ -5,10 +5,9 @@ import { useWallet } from "../../hooks/useWallet";
 import { AuthEnabled } from "./AuthEnabled";
 
 const navigation = [
-  { name: "LEARN", href: "/login", current: false },
+  { name: "LEARN", href: "/Learning", current: false },
   { name: "BUILD", href: '/IndexRentTalent', current: false },
-  { name: "HIRE", href: "/user/rental", current: false },
-  // { name: "Academy", href: "#", current: false },
+  { name: "HIRE", href: "/jobs", current: false },
 ];
 
 function classNames(...classes) {

@@ -23,7 +23,8 @@ function Socialmedia() {
           </div>
         </div>
 
-        <div className="text-left sm:text-base text-[1.2vh] sm:mx-[2rem] block sm:px-[4rem] sm:py-[3rem] mt-2 p-[1rem]  text-[#DAFF3E] bg-black rounded-[20px] focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+        <div className="bg-black text-[#DAFF3E] h-[180px] w-[950px] text-xl pl-10 py-6 font-bold rounded-2xl"
+        style={{margin:"0 auto"}}>
           {profile.bio}
         </div>
       </form>

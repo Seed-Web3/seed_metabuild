@@ -102,6 +102,7 @@ function JobMgmt() {
                               </div>
                             </div>
                             <button
+                                onClick={() => {navigate('/MyJobHire')}}
                               type="button"
                               className="bg-[#DAFF3E] border-solid text-black rounded-xl font-bold px-8 py-1 flex justify-end"
                             >

@@ -18,7 +18,7 @@ function ProfileForm() {
             <a
               type="button"
               className="bg-black border-solid border-2 border-black hover:bg-[#DAFF3E] hover:text-black text-[#DAFF3E] py-2 px-10 rounded-lg font-bold"
-              href="/user/job/manage"
+              href="/job/manage"
             >
               MANAGE
             </a>

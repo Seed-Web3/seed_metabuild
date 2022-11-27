@@ -12,7 +12,8 @@ function Login() {
 
 
     if (accountId) {
-      navigate("profile/form");
+      // navigate(`/profile/preview/${accountId}`);
+      navigate('/profile/form')
     }
   const onHandleNearButton = () => {
     // navigate("profile/preview/:account")

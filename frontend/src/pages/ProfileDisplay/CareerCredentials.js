@@ -20,15 +20,15 @@ function Career() {
   },[accountId, nfts, getTokens])
 
   return (
-    <div className="px-[10rem] mt-10 font-robotoMono pb-10">
-      <div className="flex flex-col justify-center px-[6rem]">
-        <p className="text-left text-[40px] font-bold">Career Credentials</p>
-        <div className="bg-black text-[#DAFF3E] text-left h-[180px] w-[950px] text-xl pl-10 py-6 font-bold rounded-2xl">
+    <div className="mt-10 font-robotoMono pb-10" style={{margin:"0 auto"}}>
+      <div className="flex flex-col justify-center" style={{margin:"0 auto"}}>
+        <p style={{marginLeft:"15vw"}} className="text-left text-2xl font-bold">Career Credentials</p>
+        <div style={{margin:"0 auto"}} className="bg-black text-[#DAFF3E] text-left h-[180px] w-[950px] text-xl pl-10 py-6 font-bold rounded-2xl">
           <p>Senior Architect at Google</p>
         </div>
         <div className="grid grid-cols-3 gap-4 mt-8">
           {
-            nfts.length > 0 && 
+            nfts.length > 0 &&
             nfts.map((val,key) => {
               return (
                 <div className="bg-black  rounded-2xl" key={key}>
@@ -48,8 +48,8 @@ function Career() {
                 </div>
               )})
           }
-          
-          
+
+
         </div>
       </div>
     </div>

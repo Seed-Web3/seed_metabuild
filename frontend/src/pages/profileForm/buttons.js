@@ -6,20 +6,22 @@ import { useWallet } from "../../hooks/useWallet";
 const Buttons = () => {
 
   const profileFormContext = useContext(ProfileFormContext)
+    const navigate = useNavigate();
 
   const { accountId } = useWallet()
 
   const openPreviewPage = () => {
     window.open(`/profile/preview/${accountId}`)
   }
-  
+
   return (
     <div className="py-[7rem]">
       <div className="py-3">
         <button
           type="button"
           className="bg-black border-solid border-2 border-black text-[#DAFF3E] px-16 py-3 rounded-lg font-bold"
-          onClick={profileFormContext.onSubmit}
+          // onClick={profileFormContext.onSubmit}
+            onClick={() => {navigate(`/profile/preview/${accountId}`)}}
         >
           SAVE
         </button>

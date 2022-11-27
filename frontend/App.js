@@ -37,6 +37,8 @@ import FullScreenLayout from "./src/components/Layout/FullscreenLayout";
 import ProtectedLayout from "./src/components/Layout/ProtectedLayout";
 import JobMgmt from "./src/pages/JobManagement/JobMgmt";
 import Form from './src/pages/profileForm/Form'
+import Learning from "./src/pages/myPage/learning";
+import MyJobHire from "./src/pages/JobManagement/myJobHire";
 
 
 export default function App({ isSignedIn, wallet }) {
@@ -81,28 +83,33 @@ export default function App({ isSignedIn, wallet }) {
                 }
               >
                 {/* Job Listing */}
+
+
+
                 <Route exact path="/jobs" element={<ListJobDisplay />} />
                 <Route exact path="/job/create" element={<IndexJobListing />} />
                 <Route exact path='/IndexRentTalent' element={<IndexRentTalent/>}></Route>
               </Route>
 
+
               <Route path="/user" element={<ProtectedLayout />}>
-                <Route path="profile/form" element={<Profile />} />
+                {/*<Route path="profile/form" element={<Profile />} />*/}
+                {/*<Route path="job/manage" element={<JobMgmt />} />*/}
                 <Route path="rental" element={<IndexRentTalent />} />
-                <Route path="job/manage" element={<JobMgmt />} />
-                {/*<Route*/}
-                {/*    path="profile/preview/:account"*/}
-                {/*    element={<ProfileDisplay />}*/}
-                {/*/>*/}
               </Route>
+
+              <Route path="profile/form" element={<Profile />} />
+              <Route path="job/manage" element={<JobMgmt />} />
+              <Route path="/MyJobHire" element={<MyJobHire/>}></Route>
 
               <Route path="/" element={<FullScreenLayout />}>
                 {/* Landing Page */}
-                <Route index element={<LandingPage />} />
+                {/*<Route index element={<LandingPage />} />*/}
                 {/* Authentication */}
                 <Route exact path="/register" element={<Register />} />
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/emailogin" element={<EmailLogin />} />
+                <Route exact path="/Learning" element={<Learning />}></Route>
                 <Route
                     path="profile/preview/:account"
                     element={<ProfileDisplay />}

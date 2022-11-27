@@ -56,7 +56,8 @@ const ProfileDisplay = () => {
     <div>
         <div className="relative min-h-screen overflow-x-hidden p-[2rem] bg-[#DAFF3E]">
           {profile && (
-            <UserProfileContext.Provider value={{profile}}>
+            <UserProfileContext.Provider value={{profile}}
+                                         style={{margin:"0 auto"}}>
               <div>
                 <Basicdetails />
                 <Socialmedia />

@@ -23,9 +23,9 @@ function Skills() {
   const {profile} = useContext(UserProfileContext)
 
   return (
-    <div className="my-[2rem] text-left sm:mx-4">
+    <div className="my-[2rem] text-left sm:mx-4" style={{margin:"30px auto",textAlign:"center"}}>
       <form>
-        <div className="flex flex-row justify-between xs:text-sm">
+        <div className="flex flex-row justify-between xs:text-sm" style={{margin:"0 auto"}}>
           <div className="flex flex-col w-[50%] mr-3">
             <div className="pb-[1rem]">Main Skills</div>
             <div className="grid sm:grid-cols-3 grid-flow-row-dense auto-rows-auto gap-1 xs:text-[1.5vh]">

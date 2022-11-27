@@ -20,7 +20,7 @@ function IssueNftForm({ wallet }) {
   const [endDate, setEndDate] = useState();
 
   /*
-  * This method will check for params in the link that near-wallet-selector returns 
+  * This method will check for params in the link that near-wallet-selector returns
   * If the transaction is successful (i.e the only param is transaction hash), then it'll push a post request to our BE
   */
   const urlParams = new URLSearchParams(window.location.search);
@@ -37,14 +37,14 @@ function IssueNftForm({ wallet }) {
     if (logs.txh == null) {
       return;
     }
-    
+
     // Get result from the transactions
     let result =await wallet.getTransactionResult(logs.txh);
     setLog(result)
 
     let data = await getMetadata(result?.data[0].token_ids[0])
     //We only have issued date for now, so I'm sending it twice
-    await createEvent(data.metadata?.title, data.metadata?.description, data.metadata?.Date, data.metadata?.Date) 
+    await createEvent(data.metadata?.title, data.metadata?.description, data.metadata?.Date, data.metadata?.Date)
     .then(navigate(`/nftlink?link=${logs.txh}`));
   }
 
@@ -75,8 +75,9 @@ function IssueNftForm({ wallet }) {
     try{
       // if(!name || !artwork || !startDate || !endDate) {
       //   console.log('Somethings missing');
-      //   return ; 
+      //   return ;
       // }
+      navigate('/nftlink')
       await contract.nft_mint(
         'http://localhost:1234/indexissuenft?status=success',
         {
@@ -90,6 +91,7 @@ function IssueNftForm({ wallet }) {
         },
         wallet.accountId
       )
+
     }catch(error){
       console.log(error)
     }

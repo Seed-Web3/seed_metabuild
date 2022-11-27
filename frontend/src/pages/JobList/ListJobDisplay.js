@@ -118,6 +118,7 @@ function JobsList(props) {
             />
           </a>
         </div>
+        <div onClick={() => {navigate('job/manage')}}>222</div>
         <div className="flex flex-row w-full mt-8">
           <div className="relative flex justify-start w-[50%]">
             <input
