@@ -2,14 +2,17 @@ import React, {useEffect} from "react";
 import FirstSection from "./FirstSection";
 import SecondSection from "./SecondSection";
 import ThirdSection from "./ThirdSection";
-import {Route, useParams, useRoutes} from "react-router-dom";
+import {Route, useNavigate, useParams, useRoutes} from "react-router-dom";
 import {beApi} from "../../services/api";
 
 function IndexLandingPage() {
     const params = useParams()
+    const navigate = useNavigate();
+
     useEffect(() => {
         let code = window.location.href.split('=')[1]
-        console.log(code)
+        console.log(111)
+        navigate('/profile/form')
         beApi({
             method:'get',
             url:`/auth/email/magicLink`,
@@ -19,6 +22,7 @@ function IndexLandingPage() {
         }).then((res) => {
             console.log(res)
             sessionStorage.setItem("jwt",res.data.jwt)
+
         })
     },[])
   return (
