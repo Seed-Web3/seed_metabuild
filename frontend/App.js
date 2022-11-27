@@ -90,6 +90,10 @@ export default function App({ isSignedIn, wallet }) {
                 <Route path="profile/form" element={<Profile />} />
                 <Route path="rental" element={<IndexRentTalent />} />
                 <Route path="job/manage" element={<JobMgmt />} />
+                {/*<Route*/}
+                {/*    path="profile/preview/:account"*/}
+                {/*    element={<ProfileDisplay />}*/}
+                {/*/>*/}
               </Route>
 
               <Route path="/" element={<FullScreenLayout />}>
@@ -100,9 +104,8 @@ export default function App({ isSignedIn, wallet }) {
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/emailogin" element={<EmailLogin />} />
                 <Route
-                  path="/profile/preview/:account"
-                  //   path={`profile/preview/${account}`}
-                  element={<ProfileDisplay />}
+                    path="profile/preview/:account"
+                    element={<ProfileDisplay />}
                 />
                 <Route path="/Form" element={<Form/>}></Route>
               </Route>

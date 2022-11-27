@@ -18,7 +18,7 @@ function IndexLandingPage() {
             }
         }).then((res) => {
             console.log(res)
-            localStorage.setItem("jwt",res.data.jwt)
+            sessionStorage.setItem("jwt",res.data.jwt)
         })
     },[])
   return (
